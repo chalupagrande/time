@@ -21,9 +21,14 @@
   h4{
     text-decoration: underline;
   }
+  .explanation{
+    width:90%;
+    margin:0 auto 15px auto;
+  }
   .wrapper{
     display:flex;
     flex-flow:column nowrap;
+    margin: 1%;
   }
   #canvas{
      background-color: black;
@@ -51,7 +56,7 @@
   }
   .stat{
     border:1px solid white;
-    padding:1%;
+    padding:2%;
     font-size: 55px;
   }
   .stat>p{
@@ -67,6 +72,10 @@
     margin:30px auto;
     justify-content:space-around;
   }
+  .equation{
+    width:100%;
+    text-align: center;
+  }
 </style>
 
 </head>
@@ -76,18 +85,21 @@
       <h1>Time Dialation</h1>
       <h4>Explanation</h4>
       <p>This is a small simulation to illustrate the concept of relativistic time dialation. What is relativistic time dialation? Essentially the law states that the closer you get to the speed of light, the slower time moves for you. Lets say that you leave earth going 50% the speed of light. To a stationary observer on earth, your clock would appear to click slower; 1 second would appear to be 1.15 seconds.</p>
+
+      <div class="equation"><img src="equation.svg" alt="equation" ></div>
       <h4>Instructions</h4>
       <p>Use the slider below to manipulate your speed. You will see a simulation of your rocketship bounce Earth and the Moon. You may also notice the clock begins to tick slower. This is how the clock would appear to a stationary observer. To you the clock would seem to tick normally.</p>
-
-
     </div>
     <div class='clock'>
-      <p>This is how your clock would look to a stationary observer </p>
+      <p>This is how your clock would look to a stationary observer.</p>
       <span id="clock"></span>
     </div>
     <br>
     <p>Distance (x1000 miles)</p>
-    <svg id="canvas"></svg>
+    <svg id="canvas">
+      <image id="earth" x="-70" y="20%" width="140" height="140" xlink:href="earth.svg" />
+      <image id="moon" y="40%" width="60" height="60" xlink:href="moon.svg" />
+    </svg>
     <input id="percent" type="range" name="percent" min="0" max="100">
     <p>Percent of the Speed of Light</p>
     <div class="stats">
@@ -104,6 +116,7 @@
         <span id="mph">0</span>
       </div>
     </div>
+  </div>
 
   <script src="d3.v3.min.js"></script>
   <script src="time.js"></script>

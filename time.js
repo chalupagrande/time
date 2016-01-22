@@ -39,18 +39,7 @@
       cy: Math.random()*100+'%'
     })
   })
-  canvas.append('circle').attr({
-    r: 70,
-    fill:'blue',
-    cx:0,
-    cy:'50%'
-  })
-  canvas.append('circle').attr({
-    r: 30,
-    fill:'lightgrey',
-    cx:'100%',
-    cy:'50%'
-  })
+  canvas.select('#moon').attr({x:w-30})
 
   //scales
   var xDistance = d3.scale.linear().domain([0, 240]).range([70,w-30])
